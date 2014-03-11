@@ -29,7 +29,7 @@
         }
         em.orange {
           font-style:normal;
-          color:#FFA500;
+          color:#E0A641;
         }
         em.dark-red {
           font-style:normal;
@@ -37,7 +37,7 @@
         }
         em.light-blue {
           font-style:normal;
-          color:#5BA4C5;
+          color:#2F5480;
         }
         a {
           color:#CDCDCD;
@@ -47,12 +47,144 @@
           background:#000033;
         }
         a.orange {
-          background: #FF8000;
+          background: #E0A641;
         }
         a.dark-red {
           background: #800000;
         }
     </style>
 </head>
-<div><img src='img/browserify.png' /></div>
+<div><img src='img/browserify.png' />
+    <ul>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li><em class='light-blue'>rockin the wizard hat</em></li>
+    </ul>
+</div>
+<div><img src='img/may20.png' />
+    <ul>
+        <li><em class='navy'>Jordan Rousseau</em></li>
+        <li><em class='light-blue'>@jvrousseau</em></li>
+        <li><em class='light-blue'>jrousseau@wdtinc.com</em></li>
+    </ul>
+</div>
+<div>
+    <pre class='prettyprint'>
+&lt;script type="text/javascript" src="lib/leaflet.js"/&gt;
+&lt;script type="text/javascript" src="lib/bootstrap.js"/&gt;
+&lt;script type="text/javascript" src="lib/jquery.js"/&gt;
+&lt;script type="text/javascript" src="js/map.js"/&gt;
+&lt;script type="text/javascript" src="js/control.js"/&gt;
+&lt;script type="text/javascript" src="js/view.js"/&gt;
+&lt;script type="text/javascript" src="js/is_he_really_using_bootstrap.js"/&gt;
+    </pre>
+</div>
+<div>
+    how can I get to:
+    <pre class='prettyprint'>
+&lt;script type="text/javascript" src="js/bundle.js"/&gt;
+    </pre>
+    or...even better:
+    <pre class='prettyprint'>
+&lt;script type="text/javascript" src="js/bundle.min.js"/&gt;
+    </pre>
+</div>
+<div><img src='img/ant.png' />
+    <ul>
+        <li><em class='navy'>use ant to combine files</em></li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+        <li style="visibility:hidden">*</li>
+    </ul>
+</div>
+<div>
+    <pre class='prettyprint'>
+&lt;target name="combine"&gt;
+    &lt;exec executable="java.exe"&gt;
+        &lt;arg value="-jar" /&gt;
+        &lt;arg value="build/JsCombine.jar" /&gt;
+        &lt;arg value="build/javascriptLib.txt" /&gt;
+        &lt;arg value="com/wdtinc/maps/javascriptLib.js" /&gt;
+    &lt;/exec&gt;
+&lt;/target&gt;
+&lt;target name="minify" depends="combine" description="Minifiy a set of files"&gt;
+    &lt;available file="build/YUIAnt.jar" property="YUIANT_AVAILABLE" /&gt;
+    &lt;fail unless="YUIANT_AVAILABLE" message="Run jar target to generate the required task" /&gt;
+    &lt;taskdef name="yuicompress" classname="com.yahoo.platform.yui.compressor.YUICompressTask"&gt;
+        &lt;classpath&gt;
+            &lt;pathelement path="build/yuicompressor-2.4.6.jar" /&gt;
+            &lt;pathelement path="build/YUIAnt.jar" /&gt;
+        &lt;/classpath&gt;
+    &lt;/taskdef&gt;
+    &lt;yuicompress outputfolder="com"&gt;
+        &lt;fileset dir="com"&gt;
+            &lt;include name="**/javascriptLib.js" /&gt;
+        &lt;/fileset&gt;
+    &lt;/yuicompress&gt;
+&lt;/target&gt;
+    </pre>
+</div>
+<div>
+    what about development environment?
+</div>
+<div>
+    PHP...
+    <pre class='prettyprint'>
+&lt;?php
+if (ENV == 'DEVELOPMENT')
+{
+?&gt;
+    &lt;script type="text/javascript" src="lib/leaflet.js"/&gt;
+    &lt;script type="text/javascript" src="lib/bootstrap.js"/&gt;
+    &lt;script type="text/javascript" src="lib/jquery.js"/&gt;
+    &lt;script type="text/javascript" src="js/map.js"/&gt;
+    &lt;script type="text/javascript" src="js/control.js"/&gt;
+    &lt;script type="text/javascript" src="js/view.js"/&gt;
+    &lt;script type="text/javascript" src="js/is_he_really_using_bootstrap.js"/&gt;
+    &lt;script type="text/javascript" src="js/so_many_script_tags.js"/&gt;
+&lt;?php
+}
+else
+{
+?&gt;
+    &lt;script type="text/javascript" src="js/bundle.js"/&gt;
+&lt;?php
+}
+?&gt;
+    </pre>
+</div>
+<div>
+    JS...
+    <pre class='prettyprint'>
+if (ENV === 'DEVELOPMENT') {
+    var js_library_array = [];
+    for (i in js_library_array) {
+        var js_library_location = js_library_array[i];
+        var script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = js_library_location;
+        document.getElementsByTagName('head')[0].appendChild(script);
+    }
+} else {
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = 'js/bundle.js';
+    document.getElementsByTagName('head')[0].appendChild(script);
+}
+    </pre>
+</div>
+<div>
+    <ul>
+        <li><em class='dark-red'>what's the problem?</em></li>
+        <li>complexity keeps on growing as codebase gets bigger</li>
+        <li>dependencies are all on you</li>
+        <li>assembling the application is a pain</li>
+        <li></li>
+    </ul>
+</div>
 <script>prettyPrint();</script>
