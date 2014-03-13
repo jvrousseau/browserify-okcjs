@@ -81,14 +81,11 @@
 &lt;script type="text/javascript" src="js/is_he_really_using_bootstrap.js"/&gt;
     </pre>
 </div>
+<div><a class='dark-red' href='./examples/mapbox-include/mapbox.html' target='_blank'>click</a></div>
 <div>
     how can I get to:
     <pre class='prettyprint'>
 &lt;script type="text/javascript" src="js/bundle.js"/&gt;
-    </pre>
-    or...even better:
-    <pre class='prettyprint'>
-&lt;script type="text/javascript" src="js/bundle.min.js"/&gt;
     </pre>
 </div>
 <div><img src='img/ant.png' />
@@ -129,6 +126,7 @@
 &lt;/target&gt;
     </pre>
 </div>
+<div><img src='img/list.png' /></div>
 <div>
     what about development environment?
 </div>
@@ -183,8 +181,68 @@ if (ENV === 'DEVELOPMENT') {
         <li><em class='dark-red'>what's the problem?</em></li>
         <li>complexity keeps on growing as codebase gets bigger</li>
         <li>dependencies are all on you</li>
-        <li>assembling the application is a pain</li>
-        <li></li>
+        <li>assembling the application </li>
+        <li>scope and conflicts can be a pain</li>
     </ul>
 </div>
+<div>modules</div>
+<div>
+    <ul>
+        <li><em class="light-blue">wait...what's a module?</em></li>
+        <li>isolated and arbitrary piece of code</li>
+        <li>explicity exports objects or functions in code that includes it</li>
+        <li>separation of concern</li>
+        <li>encapsulation</li>
+        <li><em class='orange'>commonjs</em> and amd (asynchronous module definition)</li>
+    </ul>
+</div>
+<div>browserify</div>
+<div>
+    <ul>
+        <li><em class="navy">it took me 14 slides to mention browserify...</em></li>
+        <li>utility that builds commonjs modules into a single bundle</li>
+        <li>browser code with node.js-style requires</li>
+        <li>just like node, write modules into separate files</li>
+        <li>use module.exports to expose external methods and properties</li>
+    </ul>
+</div>
+<div><a class='orange' href='./examples/square/square.html' target='_blank'>demo</a></div>
+<div>
+    <ul>
+        <li><em class="dark-red">hey, that was fun!</em></li>
+        <li>since we are using node.js modules, we can actually use npm to install modules from from package manager</li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><em class="orange">npm</em></li>
+        <li>a node.js package manager</li>
+        <li>it does <em class='dark-red'>not</em> stand for node package manager</li>
+        <li>this installs packages* into the node_modules directory</li>
+        <li>most npm packages are modules</li>
+    </ul>
+</div>
+<div>
+    <ul>
+        <li><em class="dark-red">a bit more on modules from npm</em></li>
+        <li>a folder with a package.json file containing a main field</li>
+        <li>a folder with an index.js file in it</li>
+        <li>a javascript file</li>
+        <li>almost all npm packages contain many modules</li>
+    </ul>
+</div>
+
+<div>
+    <ul>
+        <li><em class="light-blue">explanation of package from npm</em></li>
+        <li>a) a folder containing a program described by a package.json file</li>
+        <li>b) a gzipped tarball containing (a)</li>
+        <li>c) a url that resolves to (b)</li>
+        <li>d) a &lt;name&gt;@&lt;version&gt; that is published on the registry with (c)</li>
+        <li>e) a &lt;name&gt;@&lt;tag&gt; that points to (d)</li>
+        <li>f) a &lt;name&gt; that has a "latest" tag satisfying (e)</li>
+        <li>g) a git url that, when cloned, results in (a).</li>
+    </ul>
+</div>
+<div><a class='dark-red' href='./examples/mapbox-npm/mapbox.html' target='_blank'>demo</a></div>
 <script>prettyPrint();</script>
