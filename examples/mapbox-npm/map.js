@@ -21,7 +21,7 @@ var map = L.mapbox.map('map', 'weatherdecisiontechnologies.hgg1lml5', {
                 .addTo(map);
         }),
     heat = L.heatLayer([[35.466468, -97.524347]], {maxZoom: 18}).addTo(map),
-    geojson = JSON.parse(fs.readFileSync(__dirname + '/rb.json')),
+    geojson = JSON.parse(fs.readFileSync(__dirname + '/js.json')),
     featureGroup = L.mapbox.featureLayer().setGeoJSON(geojson).setStyle({
         color: '#000033',
         weight: 15
