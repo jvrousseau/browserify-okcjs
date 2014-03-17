@@ -126,17 +126,6 @@
             "type": "Feature",
             "properties": {},
             "geometry": {
-                "type": "Point",
-                "coordinates": [
-                    35.466979107956696,
-                    -97.52650380134583
-                ]
-            }
-        },
-        {
-            "type": "Feature",
-            "properties": {},
-            "geometry": {
                 "type": "LineString",
                 "coordinates": [
                     [
