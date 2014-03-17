@@ -81,7 +81,7 @@
 &lt;script type="text/javascript" src="js/is_he_really_using_bootstrap.js"/&gt;
     </pre>
 </div>
-<div><a class='dark-red' href='./examples/mapbox-include/mapbox.html' target='_blank'>click</a></div>
+<div><a class='dark-red' href='./examples/d3-include/d3.html' target='_blank'>click</a></div>
 <div>
     how can I get to:
     <pre class='prettyprint'>
@@ -199,7 +199,7 @@ if (ENV === 'DEVELOPMENT') {
 <div>browserify</div>
 <div>
     <ul>
-        <li><em class="navy">it took me 14 slides to mention browserify...</em></li>
+        <li><em class="navy">it took me 15 slides to mention browserify...</em></li>
         <li>utility that builds commonjs modules into a single bundle</li>
         <li>browser code with node.js-style requires</li>
         <li>just like node, write modules into separate files</li>
@@ -218,7 +218,7 @@ if (ENV === 'DEVELOPMENT') {
         <li><em class="orange">npm</em></li>
         <li>a node.js package manager</li>
         <li>it does <em class='dark-red'>not</em> stand for node package manager</li>
-        <li>this installs packages* into the node_modules directory</li>
+        <li>this installs packages into the node_modules directory</li>
         <li>most npm packages are modules</li>
     </ul>
 </div>
@@ -229,6 +229,8 @@ if (ENV === 'DEVELOPMENT') {
         <li>a folder with an index.js file in it</li>
         <li>a javascript file</li>
         <li>almost all npm packages contain many modules</li>
+        <li style="visibility:hidden">*</li>
+        <li><a class="dark-red" src="https://www.npmjs.org/doc/faq.html#What-is-a-module">source: npm</a></li>
     </ul>
 </div>
 
@@ -242,7 +244,17 @@ if (ENV === 'DEVELOPMENT') {
         <li>e) a &lt;name&gt;@&lt;tag&gt; that points to (d)</li>
         <li>f) a &lt;name&gt; that has a "latest" tag satisfying (e)</li>
         <li>g) a git url that, when cloned, results in (a).</li>
+        <li style="visibility:hidden">*</li>
+        <li><a class="navy" src="https://www.npmjs.org/doc/faq.html#What-is-a-package">source: npm</a></li>
     </ul>
 </div>
 <div><a class='dark-red' href='./examples/mapbox-npm/mapbox.html' target='_blank'>demo</a></div>
+<div>
+    <ul>
+        <li><em class="orange">transforms</em></li>
+        <li>run source transformations on files before parsing them for require()</li>
+        <li>useful for language compilation like coffeescript (coffeeify) or gorillascript (gorillaify) to javascript</li>
+        <li>or loading static assets into your bundle by parsing for fs.readFileSync() (brsf)</li>
+        <li>or translate AMD modules to node-style modules automatically (deAMDify)</li>
+        <li><a class="orange" href="https://github.com/substack/node-browserify/wiki/list-of-transforms">transforms</a></li>
 <script>prettyPrint();</script>
