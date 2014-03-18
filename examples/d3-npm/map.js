@@ -5,7 +5,7 @@ var wonky = false,
 var svg = d3.select(map.getPanes().overlayPane).append("svg"),
     g = svg.append("g").attr("class", "leaflet-zoom-hide");
 
-d3.json("us-states.json", function(collection) {
+d3.json("world.json", function(collection) {
     var transform = d3.geo.transform({point: projectPoint}),
         path = d3.geo.path().projection(transform);
 
@@ -59,7 +59,7 @@ d3.json("us-states.json", function(collection) {
     }
 
     function randomNumber () {
-        var rand = (Math.random() * 2) - 2;
+        var rand = Math.random() * (3 - (-3)) + (-3);
         return rand;
     }
 });
