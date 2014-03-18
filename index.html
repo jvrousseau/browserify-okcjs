@@ -52,6 +52,9 @@
         a.dark-red {
           background: #800000;
         }
+        a.light-blue{
+            color:#2F5480;
+        }
     </style>
 </head>
 <div><img src='img/browserify.png' />
@@ -197,6 +200,13 @@ if (ENV === 'DEVELOPMENT') {
         <li>scope and conflicts can be a pain</li>
     </ul>
 </div>
+<div>
+    <ul>
+        <li><em class='orange'>rule of modularity:</em> to build a program out of simple parts connected by well defined interfaces</li>
+        <li></br></li>
+        <li><a class="dark-red" href="http://maxogden.com/media/rule-of-modularity.png" target="_blank">source</a></li>
+    </ul>
+</div>
 <div>modules</div>
 <div>
     <ul>
@@ -211,7 +221,7 @@ if (ENV === 'DEVELOPMENT') {
 <div>browserify</div>
 <div>
     <ul>
-        <li><em class="navy">it took me 17 slides to mention browserify...</em></li>
+        <li><em class="navy">it took me 18 slides to mention browserify...</em></li>
         <li>utility that builds commonjs modules into a single bundle</li>
         <li>browser code with node.js-style requires</li>
         <li>just like node, write modules into separate files</li>
@@ -248,7 +258,7 @@ if (ENV === 'DEVELOPMENT') {
         <li>a javascript file</li>
         <li>almost all npm packages contain many modules (because every file they load with require() is a module)</li>
         <li style="visibility:hidden">*</li>
-        <li><a class="dark-red" href="https://www.npmjs.org/doc/faq.html#What-is-a-module" target='_blank'>source: npm</a></li>
+        <li><a class="dark-red" href="https://www.npmjs.org/doc/faq.html#What-is-a-module" target='_blank'>source</a></li>
     </ul>
 </div>
 
@@ -263,7 +273,7 @@ if (ENV === 'DEVELOPMENT') {
         <li>f) a &lt;name&gt; that has a "latest" tag satisfying (e)</li>
         <li>g) a git url that, when cloned, results in (a).</li>
         <li style="visibility:hidden">*</li>
-        <li><a class="navy" href="https://www.npmjs.org/doc/faq.html#What-is-a-package" target='_blank'>source: npm</a></li>
+        <li><a class="navy" href="https://www.npmjs.org/doc/faq.html#What-is-a-package" target='_blank'>source</a></li>
     </ul>
 </div>
 <div><a class='dark-red' href='./examples/mapbox-npm/mapbox.html' target='_blank'>demo</a></div>
@@ -279,7 +289,24 @@ if (ENV === 'DEVELOPMENT') {
     </ul>
 </div>
 <div>
-    now go grab your robe, grow a beard and do some browserify
+    <ul>
+        <li><em class="dark-red">browserify resources</em></li>
+        <li></br></li>
+        <li><a class="orange" href="http://benclinkinbeard.com/posts/how-browserify-works/" target="_blank">benclinkinbeard.com</a></li>
+        <li>don't let browserify be a black box</li>
+        <li></br></li>
+        <li><a class="light-blue" href="http://maxogden.com/node-packaged-modules.html" target="_blank">maxogden.com</a></li>
+        <li>great resource + requirebin.com is amazing</li>
+        <li></br></li>
+        <li><a class="dark-red" href="https://github.com/jmreidy/grunt-browserify" target="_blank">grunt-browserify</a></li>
+        <li>grunt task for browserify (let's be honest...it's just easier)</li>
+        <li></br></li>
+        <li><a class="navy" href="https://github.com/substack/node-browserify/wiki" target="_blank">browserify github wiki</a></li>
+        <li>solid resource from the source</li>
+    </ul>
+</div>
+<div>
+    now go grab a robe, grow a beard and do some browserify
 </div>
 <div>
   <img src="img/jordan-gandalf.jpg" alt="" />
